@@ -1,0 +1,10 @@
+{
+  "extends": "@oclif/tslint",
+  "rules": {
+    "ordered-imports": false,
+    "semicolon": [true, "always"],
+    "object-curly-spacing": false,
+    "no-http-string": false,
+    "no-unused-variable": [true, {"ignore-pattern": "^_"}]
+  }
+}

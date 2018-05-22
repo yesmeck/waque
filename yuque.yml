@@ -1,0 +1,13 @@
+# 配置请参考：https://www.yuque.com/waquehq/docs/configuration
+repo: 'waquehq/docs'
+pattern: 'docs/**/*.md'
+template:
+  variables:
+    foo: bar
+  tags:
+    blockStart: '<%'
+    blockEnd: '%>'
+    variableStart: '<$'
+    variableEnd: '$>'
+    commentStart: '<#'
+    commentEnd: '#>'
