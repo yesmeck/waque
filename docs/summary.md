@@ -3,4 +3,3 @@
 - [语法扩展](extend)
 - [配置说明](configuration)
 - [常见问题](faq)
-- [更新日志](changelog)
