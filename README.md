@@ -36,7 +36,7 @@ $ npm i -g waque
 
 在文档目录下运行下面的命令生成瓦雀的配置文件 `yuque.yml`。
 
-这个命令会要求你输入语雀知识库的名字和要上传的文档，可以参考[配置说明](configuration)来设置。
+这个命令会要求你输入语雀知识库的名字和要上传的文档，可以参考[配置说明](docs/configuration.md)来设置。
 
 ```bash
 $ waque init
@@ -66,7 +66,7 @@ $ waque upload foo.md bar.md
 $ waque export [DIR]
 ```
 
-[导出再上传可能碰到的问题](faq)
+[导出再上传可能碰到的问题](docs/faq.md)
 
 ## 谁在使用
 
