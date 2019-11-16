@@ -2,8 +2,8 @@ import {Hook} from '@oclif/config';
 import Chalk from 'chalk';
 import {spawn} from 'child_process';
 import * as fs from 'fs-extra';
-import * as path from 'path';
 import * as semver from 'semver';
+import * as path from '../../path';
 
 const debug = require('debug')('update-check');
 

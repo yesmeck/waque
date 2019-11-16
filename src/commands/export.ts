@@ -1,11 +1,13 @@
 import { writeFileSync } from 'fs';
-import { resolve, join } from 'path';
 import * as signale from 'signale';
 import LarkClient from '../LarkClient';
 import Base from '../base';
+import { resolve, join } from '../path';
 
 function times(n: number, s: string) {
-  return Array(n).fill(s).join('');
+  return Array(n)
+    .fill(s)
+    .join('');
 }
 
 export default class Export extends Base {
@@ -16,7 +18,7 @@ export default class Export extends Base {
   static args = [
     {
       name: 'dir',
-      default: '.'
+      default: '.',
     },
   ];
 

@@ -1,11 +1,11 @@
 import * as glob from 'glob';
 import * as signale from 'signale';
-import { basename, resolve } from 'path';
 import { readFileSync, existsSync } from 'fs';
 import { times, compact } from 'lodash';
 import LarkClient from '../LarkClient';
 import Document from '../Document';
 import Base from '../base';
+import { basename, resolve } from '../path';
 
 export default class Upload extends Base {
   static description = 'upload docs';
@@ -66,7 +66,7 @@ export default class Upload extends Base {
     let hasError = false;
 
     await Promise.all(docs.map(doc => {
-      const result = doc.vaidate();
+      const result = doc.validate();
       if (!result.valid) {
         signale.error(`${doc.filename} ${result.messages.join('|')}`);
         hasError = true;

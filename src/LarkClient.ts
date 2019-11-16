@@ -1,6 +1,6 @@
 import axios, { AxiosInstance } from 'axios';
 import User from './User';
-import { join } from 'path';
+import { join } from './path';
 
 require('axios-debug-log')({
   request(debug: any, config: any) {

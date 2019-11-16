@@ -1,4 +1,4 @@
-import { join } from 'path';
+import { join } from './path';
 import { existsSync, readFileSync, writeFileSync } from 'fs';
 import LarkClient from './LarkClient';
 

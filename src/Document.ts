@@ -1,9 +1,9 @@
-import { basename, resolve } from 'path';
 import { readFileSync } from 'fs';
 import * as yamlFront from 'yaml-front-matter';
 import * as nunjucks from 'nunjucks';
 import { IConfig } from './Config';
 import LarkClient from './LarkClient';
+import { basename, resolve } from './path';
 
 const ASSETS_BEGIN = '[comment]: <> (waque assets)';
 const ASSETS_END = '[comment]: <> (waque assets end)';
@@ -162,7 +162,7 @@ export default class Document {
     };
   }
 
-  vaidate() {
+  validate() {
     const result: {
       valid: boolean;
       messages: string[];

@@ -11,3 +11,8 @@ declare module 'remark';
 declare module 'unist-util-visit';
 
 declare module 'sha1-file';
+
+declare module 'slash2' {
+  function slash(path: string): string;
+  export = slash;
+}

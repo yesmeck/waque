@@ -1,9 +1,9 @@
-import { resolve } from 'path';
 import { existsSync, writeFileSync } from 'fs';
 import { prompt, registerPrompt } from 'inquirer';
 import * as signale from 'signale';
 import LarkClient from '../LarkClient';
 import Base from '../base';
+import { resolve } from '../path';
 
 registerPrompt('autocomplete', require('inquirer-autocomplete-prompt'));
 

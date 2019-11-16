@@ -6,6 +6,7 @@
     "module": "commonjs",
     "outDir": "./lib",
     "pretty": true,
+    "esModuleInterop": true,
     "rootDirs": [
       "./src"
     ],
