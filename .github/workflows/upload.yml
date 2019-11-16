@@ -22,5 +22,12 @@ jobs:
     - name: upload
       run: |
         ./bin/run upload -t ${YUQUE_TOKEN}
+      if: runner.os == 'Linux'
+      env:
+        YUQUE_TOKEN: ${{ secrets.YUQUE_TOKEN }}
+    - name: upload
+      run: |
+        ./bin/run upload -t %YUQUE_TOKEN%
+      if: runner.os == 'Windows'
       env:
         YUQUE_TOKEN: ${{ secrets.YUQUE_TOKEN }}
