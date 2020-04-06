@@ -22,7 +22,9 @@ $ npm i -g waque
 
 ## 登录语雀
 
-设置环境变量 `YUQUE_TOKEN`，语雀的 token 可以在这里获取 https://www.yuque.com/settings/tokens
+```bash
+$ waque login
+```
 
 ## 初始化配置
 

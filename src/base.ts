@@ -1,4 +1,5 @@
 import {Command, flags} from '@oclif/command';
+import * as signale from 'signale';
 import User from './User';
 import { load } from './Config';
 
@@ -42,6 +43,10 @@ export default abstract class extends Command {
   async loadUser() {
     const user = new User(this.config, this.flags!.token);
     await user.load();
+    if (!user.token) {
+      signale.error('请先使用 waque login 登录语雀');
+      process.exit(1);
+    }
     this.config.currentUser = user;
   }
 }
