@@ -50,6 +50,14 @@ $ waque upload
 $ waque upload foo.md bar.md
 ```
 
+## Watch 模式
+
+`-w` 参数可以开启 watch 模式。
+
+```bash
+$ waque upload -w
+```
+
 ## 从已有仓库导出文档
 
 如果你要把已有的仓库改用瓦雀管理，那么你可以用下面的命令先把文档导出成 markdown。

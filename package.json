@@ -20,6 +20,7 @@
     "axios": "^0.18.0",
     "axios-debug-log": "^0.4.0",
     "chalk": "^2.4.1",
+    "chokidar": "^3.3.1",
     "debug": "^3.1.0",
     "form-data": "^2.3.2",
     "fs-extra": "^6.0.1",

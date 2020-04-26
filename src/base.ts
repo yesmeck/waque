@@ -15,6 +15,7 @@ export default abstract class extends Command {
   flags?: {
     env: 'yuque';
     token: string;
+    watch?: boolean;
   };
 
   args?: {
@@ -26,7 +27,7 @@ export default abstract class extends Command {
   async init() {
     // do some initialization
     const { args, flags } = this.parse();
-    this.flags = flags;
+    this.flags = flags as any;
     this.args = args;
     if (this.id !== 'login') {
       await this.loadUser();
