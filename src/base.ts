@@ -8,7 +8,6 @@ export default abstract class extends Command {
     token: flags.string({
       char: 't',
       env: 'YUQUE_TOKEN',
-      required: true,
     }),
   };
 
