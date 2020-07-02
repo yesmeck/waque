@@ -147,7 +147,7 @@ export default class Document {
       config.url ||
       basename(this.filename, '.md')
         .toLowerCase()
-        .replace(' ', '-');
+        .replace(/\s/g, '-');
     this.template = config.template;
     this.rendered = config.__content;
     this.public = config.public;
