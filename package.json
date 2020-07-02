@@ -1,6 +1,6 @@
 {
   "name": "waque",
-  "version": "1.12.1",
+  "version": "1.12.2",
   "author": "Wei Zhu <yesmeck@gmail.com>",
   "bin": {
     "waque": "./bin/run"
