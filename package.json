@@ -58,7 +58,7 @@
     "lint-staged": "^7.1.2",
     "mocha": "^5",
     "nyc": "^11",
-    "standard-version": "^4.4.0",
+    "standard-version": "^8.0.1",
     "ts-node": "^6",
     "tslint": "^5",
     "typescript": "^2.8"
