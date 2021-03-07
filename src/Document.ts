@@ -94,7 +94,7 @@ export default class Document {
   }
 
   signature() {
-    return '\n\n---\n <sub>本文档由[瓦雀](https://www.yuque.com/waquehq)创建</sub>';
+    return '\n\n---\n <sub>本文档发布于我的知乎[港股美股那些事](https://www.zhihu.com/column/c_1272575772737998848)</sub>';
   }
 
   applyLayout(layout?: string) {
