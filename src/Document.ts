@@ -1,6 +1,7 @@
 import { readFileSync } from 'fs';
 import * as yamlFront from 'yaml-front-matter';
 import * as nunjucks from 'nunjucks';
+import pinyin from "pinyin";
 import { IConfig } from './Config';
 import LarkClient from './LarkClient';
 import { basename, resolve } from './path';
@@ -37,7 +38,7 @@ export default class Document {
     this.larkDocs = larkDocs;
     this.lark = lark;
     this.config = config;
-    this.filename = filename;
+    this.filename = filename// encodeURIComponent(filename);
     this.assets = [];
     this.raw = readFileSync(resolve(this.filename)).toString();
   }
@@ -155,7 +156,10 @@ export default class Document {
 
   dump() {
     return {
-      slug: this.slug,
+      slug: pinyin(this.slug, {
+        style: pinyin.STYLE_NORMAL,
+        heteronym: false // 启用多音字模式
+      }).join('-'),
       title: this.title,
       body: this.body,
       public: this.public
@@ -174,10 +178,10 @@ export default class Document {
       result.valid = false;
       result.messages.push('缺少文章标题');
     }
-    if (!/\w+/.test(this.slug)) {
-      result.valid = false;
-      result.messages.push('文件名只能是字母、数字、_和-');
-    }
+    // if (!/\w+/.test(this.slug)) {
+    //   result.valid = false;
+    //   result.messages.push('文件名只能是字母、数字、_和-');
+    // }
     return result;
   }
 }
