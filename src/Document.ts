@@ -158,7 +158,7 @@ export default class Document {
     return {
       slug: pinyin(this.slug, {
         style: pinyin.STYLE_NORMAL,
-        heteronym: false // 启用多音字模式
+        heteronym: false
       }).join('-'),
       title: this.title,
       body: this.body,
