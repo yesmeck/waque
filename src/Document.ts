@@ -154,6 +154,7 @@ export default class Document {
     this.public = config.public;
   }
 
+
   dump() {
     return {
       slug: pinyin(this.slug, {
