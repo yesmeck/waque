@@ -1,4 +1,5 @@
 import { writeFileSync } from 'fs';
+import { mkdirpSync } from 'fs-extra';
 import * as signale from 'signale';
 import LarkClient from '../LarkClient';
 import Base from '../base';
@@ -18,7 +19,7 @@ export default class Export extends Base {
   static args = [
     {
       name: 'dir',
-      default: '.',
+      default: 'exports',
     },
   ];
 
@@ -30,7 +31,9 @@ export default class Export extends Base {
     const docs = await lark.getDocs();
     const dir = resolve(args.dir);
 
-    docs.map(async (doc: any) => {
+    mkdirpSync(dir);
+
+    await Promise.all(docs.map(async (doc: any) => {
       const docDetail = await lark.getDoc(doc.id);
       const filename = docDetail.title.trim();
       const file = `${filename}.md`;
@@ -51,7 +54,7 @@ export default class Export extends Base {
       content.push(docDetail.body);
       writeFileSync(join(dir, file.replace(/[\/ ]/g, '-')), content.join('\n'));
       signale.success(`Exported ${file}`);
-    });
+    }));
     const repo = await lark.getRepo();
     if (repo.toc) {
       const toc = await lark.getRepoToc();
@@ -61,5 +64,6 @@ export default class Export extends Base {
       writeFileSync(join(dir, 'summary.md'), content);
       signale.success('Exported summary.md');
     }
+      signale.success(`Exported to ${resolve(dir)}`);
   }
 }
