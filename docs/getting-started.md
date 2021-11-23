@@ -58,6 +58,14 @@ $ waque upload foo.md bar.md
 $ waque upload -w
 ```
 
+## 指定配置文件
+
+除了使用默认的配置文件 `yuque.yml` 外，也可以通过 `-c` 参数指定其他配置文件。
+
+```bash
+$ waque upload -c config.yml
+```
+
 ## 从已有仓库导出文档
 
 如果你要把已有的仓库改用瓦雀管理，那么你可以用下面的命令先把文档导出成 markdown。

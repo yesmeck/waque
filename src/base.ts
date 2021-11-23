@@ -9,11 +9,17 @@ export default abstract class extends Command {
       char: 't',
       env: 'YUQUE_TOKEN',
     }),
+
+    config: flags.string({
+      char: 'c',
+      default: 'yuque.yml',
+    })
   };
 
   flags?: {
     env: 'yuque';
     token: string;
+    config: string;
     watch?: boolean;
   };
 
@@ -37,7 +43,7 @@ export default abstract class extends Command {
   }
 
   loadConfig() {
-    this.config.lark = load();
+    this.config.lark = load(this.flags!.config);
   }
 
   async loadUser() {

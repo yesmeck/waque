@@ -1,7 +1,6 @@
 import { safeLoad } from 'js-yaml';
-import { join } from './path';
 import { readFileSync } from 'fs';
-import slash from 'slash2';
+import { resolve } from 'path';
 
 export interface IConfig {
   pattern: string;
@@ -18,7 +17,7 @@ export interface IConfig {
 
 export type UserConfig = IConfig;
 
-export function load() {
+export function load(configFile: string) {
   const defaultConfig: Partial<IConfig> = {
     pattern: '**/*.md',
     ignore: 'node_modules/**/*',
@@ -27,7 +26,7 @@ export function load() {
     template: false,
   };
 
-  let userConfig = safeLoad(readFileSync(join(process.cwd(), 'yuque.yml'), 'utf8')) as UserConfig;
+  let userConfig = safeLoad(readFileSync(resolve(process.cwd(), configFile), 'utf8')) as UserConfig;
 
   const config = { ...defaultConfig, ...userConfig };
 
