@@ -24,7 +24,7 @@ const hook: Hook<'init'> = async function ({config}) {
 更新日志： https://www.yuque.com/waque/docs/changelog\n
 `);
       }
-    } catch (err) {
+    } catch (err: any) {
       if (err.code !== 'ENOENT') throw err;
     }
   };

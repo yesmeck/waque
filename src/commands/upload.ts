@@ -12,7 +12,7 @@ import { basename, resolve } from '../path';
 export default class Upload extends Base {
   static description = 'upload docs';
 
-  static flags = {
+  static flags: any = {
     ...Base.flags,
     watch: flags.boolean({
       char: 'w',
