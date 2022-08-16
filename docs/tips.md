@@ -36,7 +36,7 @@ layout 里同样可以使用 nunjucks 模板语法，除了可以访问在配置
 通过 `husk` 和 `lint-staged` 这两个工具的组合，你还可以只同步当前 commit 修改过的文档
 
 ```bash
-$ tnpm i husky lint-staged --save-dev
+$ npm i husky lint-staged --save-dev
 ```
 
 然后在 `package.json` 里加入以下配置：
